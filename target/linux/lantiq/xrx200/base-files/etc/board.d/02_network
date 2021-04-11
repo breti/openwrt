@@ -56,6 +56,10 @@ lantiq_setup_interfaces()
 		ucidef_add_switch "switch0" \
 			"5:lan:2" "2:lan:3" "3:lan:4" "4:wan:1" "6t@eth0"
 		;;
+	teles,voipbox-dsl-bri)
+		ucidef_add_switch "switch0" \
+			"2:lan:1" "4:lan:2" "6t@eth0"
+		;;
 	tplink,tdw8970|\
 	tplink,tdw8980)
 		ucidef_add_switch "switch0" \
@@ -91,7 +95,8 @@ lantiq_setup_dsl()
 	avm,fritz7360sl|\
 	avm,fritz7362sl|\
 	avm,fritz7412|\
-	avm,fritz7430)
+	avm,fritz7430|\
+	teles,voipbox-dsl-bri)
 		annex="b"
 		;;
 	esac
@@ -158,6 +163,10 @@ lantiq_setup_macs()
 		;;
 	netgear,dm200)
 		lan_mac=$(mtd_get_mac_binary ART 0x0)
+		wan_mac=$(macaddr_add "$lan_mac" 1)
+		;;
+	teles,voipbox-dsl-bri)
+		lan_mac=$(mtd_get_mac_ascii ubootconfig ethaddr)
 		wan_mac=$(macaddr_add "$lan_mac" 1)
 		;;
 	tplink,tdw8970|\
