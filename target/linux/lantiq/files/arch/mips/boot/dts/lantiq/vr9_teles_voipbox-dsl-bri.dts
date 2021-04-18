@@ -140,7 +140,7 @@
 			};
 
 			partition@40000 {
-				label = "firmware";
+				label = "dsl_firmware";
 				reg = <0x40000 0x100000>; /* 1 MB */
 				read-only;
 			};
