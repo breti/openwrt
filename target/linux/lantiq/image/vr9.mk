@@ -235,6 +235,15 @@ define Device/netgear_dm200
 endef
 TARGET_DEVICES += netgear_dm200
 
+define Device/teles_voipbox-dsl-bri
+  $(Device/NAND)
+  DEVICE_VENDOR := Teles
+  DEVICE_MODEL := VoIPBox DSL 2/4/8
+  KERNEL_SIZE := 6656k
+  IMAGE_SIZE := 31232k
+endef
+TARGET_DEVICES += teles_voipbox-dsl-bri
+
 define Device/zyxel_p-2812hnu-f1
   $(Device/NAND)
   DEVICE_VENDOR := ZyXEL
