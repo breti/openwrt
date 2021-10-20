@@ -140,14 +140,9 @@
 			};
 
 			partition@40000 {
-				label = "dsl_firmware";
-				reg = <0x40000 0x100000>; /* 1 MB */
+				label = "firmware";
+				reg = <0x40000 0x780000>; /* 7.8 MB */
 				read-only;
-			};
-
-			partition@140000 {
-				label = "kernel";
-				reg = <0x140000 0x680000>; /* 6.8 MB */
 			};
 
 			partition@7c0000 {

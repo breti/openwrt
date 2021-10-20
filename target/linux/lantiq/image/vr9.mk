@@ -236,11 +236,10 @@ endef
 TARGET_DEVICES += netgear_dm200
 
 define Device/teles_voipbox-dsl-bri
-  $(Device/NAND)
+  $(Device/lantiqFullImage)
   DEVICE_VENDOR := Teles
   DEVICE_MODEL := VoIPBox DSL 2/4/8
-  KERNEL_SIZE := 6656k
-  IMAGE_SIZE := 31232k
+  IMAGE_SIZE := 7680k
 endef
 TARGET_DEVICES += teles_voipbox-dsl-bri
 
